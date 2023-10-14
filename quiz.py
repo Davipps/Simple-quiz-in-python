@@ -308,6 +308,8 @@ def quiz_initialize(id):
       pId = random.randint(0,size)
       count = 0
       pergunta_temp = quiz_temp[pId]
+      random.shuffle(pergunta_temp["opcoes_resposta"])
+      Resposta = options_letters[encontrar_posicao(pergunta_temp["resposta_correta"],pergunta_temp["opcoes_resposta"])]
       print("Pergunta: " + pergunta_temp["pergunta"])
       print("\nOpções: \n")
       options_letters = ["A","B","C","D"]
@@ -319,7 +321,6 @@ def quiz_initialize(id):
       print("esta resposta não esta nas opções ")
     else:
       print( cor_vermelha + "resposta incorreta\n\n" + cor_reset + Resposta)
-      Resposta = options_letters[encontrar_posicao(pergunta_temp["resposta_correta"],pergunta_temp["opcoes_resposta"])]
       prr += 1
       quiz_temp.pop(pId)
       if len(quiz_temp) == 0:
@@ -347,6 +348,8 @@ def quiz_initialize(id):
       pId = random.randint(0,size)
       count = 0
       pergunta_temp = quiz_temp[pId]
+      random.shuffle(pergunta_temp["opcoes_resposta"])
+      Resposta = options_letters[encontrar_posicao(pergunta_temp["resposta_correta"],pergunta_temp["opcoes_resposta"])]
       print("Pergunta: " + pergunta_temp["pergunta"])
       print("\nOpções: \n")
       options_letters = ["A","B","C","D"]
