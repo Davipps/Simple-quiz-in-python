@@ -280,6 +280,7 @@ def quiz_initialize(id):
       break
     if respost.upper() == Resposta:
       print( cor_verde + "Correto\n\n" + cor_reset)
+      Resposta = options_letters[encontrar_posicao(pergunta_temp["resposta_correta"],pergunta_temp["opcoes_resposta"])]
       quiz_temp.pop(pId)
       prc += 1
       if len(quiz_temp) == 0:
@@ -318,6 +319,7 @@ def quiz_initialize(id):
       print("esta resposta não esta nas opções ")
     else:
       print( cor_vermelha + "resposta incorreta\n\n" + cor_reset + Resposta)
+      Resposta = options_letters[encontrar_posicao(pergunta_temp["resposta_correta"],pergunta_temp["opcoes_resposta"])]
       prr += 1
       quiz_temp.pop(pId)
       if len(quiz_temp) == 0:
